@@ -24,7 +24,7 @@ final class Configuration
         protected ?HeartbeatChecker $heartbeatChecker = null,
         protected ?TagGenerator $tagGenerator = null,
     ) {
-        if (!config()->has("vite.configs.${name}")) {
+        if (!config()->has("vite.configs.{$name}")) {  //PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead 
             throw new NoSuchConfigurationException($name);
         }
 
